@@ -1,4 +1,7 @@
 # Your code here
+import math
+import random
+lookup_table = {}
 
 
 def slowfun_too_slow(x, y):
@@ -15,6 +18,9 @@ def slowfun(x, y):
     output, but completes quickly instead of taking ages to run.
     """
     # Your code here
+    if f'{x},{y}' not in lookup_table:
+        lookup_table[f'{x},{y}'] = slowfun_too_slow(x, y)
+    return lookup_table[f'{x},{y}']
 
 
 
