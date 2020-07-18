@@ -1,6 +1,18 @@
 def no_dups(s):
     # Your code here
+    start_split = s.split(' ')
+    current_split = []
+    for word in start_split:
+        if word not in current_split:
+            current_split.append(word)
 
+    output = ""
+    for i in range(len(current_split)):
+        if i == 0:
+            output += current_split[i]
+        else:
+            output += f' {current_split[i]}'
+    return output
 
 
 if __name__ == "__main__":
